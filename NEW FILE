@@ -1,0 +1,112 @@
+ html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Review Suggestions</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#submit">Submit a Review</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home">
+            <h2>Welcome!</h2>
+            <p>Explore movie reviews and submit your suggestions!</p>
+        </section>
+        <section id="reviews">
+            <h2>Movie Reviews</h2>
+            <div id="review-list"></div>
+        </section>
+        <section id="submit">
+            <h2>Submit a Review</h2>
+            <form id="review-form">
+                <input type="text" placeholder="Movie Title" required>
+                <textarea placeholder="Your Review" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>This site collects and showcases movie reviews from viewers.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Movie Review Suggestions</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
+ ⁠
+
+### 3. CSS for Styling
+Create a ⁠ styles.css ⁠ file to style your website:
+
+⁠ css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+ ⁠
+
+### 4. JavaScript for Interactivity
+Create a ⁠ script.js ⁠ file for handling the form submission and displaying reviews:
+
+⁠ javascript
+document.getElementById('review-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const title = this[0].value;
+    const review = this[1].value;
+    const reviewList = document.getElementById('review-list');
+    
+    const reviewItem = document.createElement('div');
+    reviewItem.innerHTML = `<h3>${title}</h3><p>${review}</p>`;
+    reviewList.appendChild(reviewItem);
+
+    this.reset();
+});
+ ⁠
+
